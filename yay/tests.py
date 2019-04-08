@@ -9,16 +9,18 @@ from django.urls import reverse
 from django.test.utils import override_settings
 from django.conf import settings
 
+import os
+
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 class SeleniumTest(LiveServerTestCase):
 
-
+    print(os.listdir())
 
     def setUp(self):
-        cap = DesiredCapabilities().FIREFOX
-        cap["marionette"] = False
-        browser = webdriver.Firefox(capabilities=cap, executable_path="geckodriver")
+        # cap = DesiredCapabilities().FIREFOX
+        # cap["marionette"] = False
+        # browser = webdriver.Firefox(capabilities=cap, executable_path="geckodriver")
 
         self.browser = webdriver.Firefox()
         super(SeleniumTest, self).setUp()
@@ -28,3 +30,10 @@ class SeleniumTest(LiveServerTestCase):
 
     def test_yay(self):
         self.load("/pasta")
+        self.browser.quit()
+
+    # def test_yay2(self):
+    #     y = open("geckodriver.log")
+    #     print("LOG:",y.read())
+    #     y.close()
+    #     self.load("/pasta")

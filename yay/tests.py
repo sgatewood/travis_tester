@@ -29,6 +29,7 @@ class SeleniumTest(LiveServerTestCase):
         except Exception as e:
             print(e)
             print(open("geckodriver.log").read())
+            raise e
         super(SeleniumTest, self).setUp()
 
     def load(self,url):

@@ -25,7 +25,6 @@ class SeleniumTest(LiveServerTestCase):
             self.browser = webdriver.Firefox(executable_path="geckodriver")
 
             # self.browser = webdriver.Firefox()
-            0/0
         except Exception as e:
             print(e)
             print(open("geckodriver.log").read())

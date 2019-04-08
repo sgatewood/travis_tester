@@ -12,8 +12,11 @@ from django.conf import settings
 class SeleniumTest(LiveServerTestCase):
 
     def setUp(self):
-        self.browser = webdriver.Chrome()
+        self.browser = webdriver.Firefox()
         super(SeleniumTest, self).setUp()
 
+    def load(self,url):
+        self.browser.get(self.live_server_url+url)
+
     def test_yay(self):
-        return
+        self.load("")

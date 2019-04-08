@@ -9,7 +9,6 @@ before_script:
   - export PATH=$PATH:$PWD
   - sudo cp geckodriver /usr/local/bin/
   - sudo apt-get install xvfb
-  - sudo apt-get install firefox-mozilla-build
   - Xvfb :10 -ac &
   - export DISPLAY=:10
 

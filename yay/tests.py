@@ -18,12 +18,13 @@ class SeleniumTest(LiveServerTestCase):
     print(os.listdir())
 
     def setUp(self):
-        # cap = DesiredCapabilities().FIREFOX
+        cap = DesiredCapabilities().FIREFOX
         # cap["marionette"] = False
-        # browser = webdriver.Firefox(capabilities=cap, executable_path="geckodriver")
 
         try:
-            self.browser = webdriver.Firefox()
+            self.browser = webdriver.Firefox(executable_path="geckodriver")
+
+            # self.browser = webdriver.Firefox()
             0/0
         except Exception as e:
             print(e)

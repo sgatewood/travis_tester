@@ -22,7 +22,10 @@ class SeleniumTest(LiveServerTestCase):
         # cap["marionette"] = False
         # browser = webdriver.Firefox(capabilities=cap, executable_path="geckodriver")
 
-        self.browser = webdriver.Firefox()
+        try:
+            self.browser = webdriver.Firefox()
+        except:
+            print(open("geckodriver.log").read())
         super(SeleniumTest, self).setUp()
 
     def load(self,url):

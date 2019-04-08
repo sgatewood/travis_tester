@@ -1,6 +1,5 @@
 language: python
 before_script:
-  - apk add libexif udev
   - wget http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux64.zip
   - unzip chromedriver_linux64.zip -d /home/travis/virtualenv/python3.6.3/bin/
   - export CHROME_BIN=chromium-browser
